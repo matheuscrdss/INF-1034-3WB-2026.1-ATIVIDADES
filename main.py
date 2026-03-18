@@ -69,18 +69,16 @@ for i in range(3):
     t.lt(120)
 t.end_fill()
 
-#retangulo
+#espiral
 t.pu()
-t.goto(-300,150)
+t.goto(-200,150)
 t.pd()
 t.setheading(0)
 
 t.fillcolor(color)
 t.begin_fill()
-for i in range(2):
-    t.fd(200)
-    t.lt(90)
-    t.fd(100)
+for i in range(100):
+    t.fd(i * 2)
     t.lt(90)
 t.end_fill()
 
