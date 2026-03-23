@@ -173,9 +173,84 @@ t.speed(0)
 
 #senegal - medio
 
-t.fillcolor('black')
-t.begin_fill()
+# t.fillcolor('black')
+# t.begin_fill()
 
+
+# for i in range(2):
+#     t.fd(300)
+#     t.lt(90)
+#     t.fd(200)
+#     t.lt(90)
+
+# t.fillcolor('green')
+# t.begin_fill()
+# for i in range(2):
+#     t.fd(100)
+#     t.lt(90)
+#     t.fd(100)
+# t.end_fill()
+
+
+# t.pu()
+# t.goto(0,0)
+# t.pd()
+# t.lt(180)
+# t.fd(200)
+
+# t.fillcolor('red')
+# t.begin_fill()
+
+# for i in range(2):
+#     t.fd(100)
+#     t.lt(90)
+#     t.fd(100)
+# t.lt(90)
+# t.fd(200)
+
+# t.end_fill()
+
+# t.pu()
+# t.goto(0,0)
+# t.pd()
+# t.lt(90)
+# t.fd(100)
+
+# t.fillcolor('yellow')
+# t.begin_fill()
+
+# for i in range(2):
+#     t.fd(100)
+#     t.lt(90)
+#     t.fd(200)
+#     t.lt(90)
+
+# t.end_fill()
+
+# t.pu()
+# t.goto(120,110)
+# t.pd()
+
+# t.fillcolor('green')
+# t.begin_fill()
+
+# for i in range(5):
+#     t.fd(60)
+#     t.right(144)
+
+# t.end_fill()
+
+# t.pu()
+# t.goto(150,90)
+# t.pd()
+
+# t.fillcolor('green')
+# t.begin_fill()
+# t.circle(11)
+# t.end_fill()
+
+
+# palestina - medio
 
 for i in range(2):
     t.fd(300)
@@ -183,65 +258,16 @@ for i in range(2):
     t.fd(200)
     t.lt(90)
 
-t.fillcolor('green')
-t.begin_fill()
-for i in range(2):
-    t.fd(100)
-    t.lt(90)
-    t.fd(100)
-t.end_fill()
-
-
-t.pu()
-t.goto(0,0)
-t.pd()
-t.lt(180)
-t.fd(200)
-
-t.fillcolor('red')
-t.begin_fill()
-
-for i in range(2):
-    t.fd(100)
-    t.lt(90)
-    t.fd(100)
-t.lt(90)
-t.fd(200)
-
-t.end_fill()
-
-t.pu()
-t.goto(0,0)
-t.pd()
-t.lt(90)
-t.fd(100)
-
-t.fillcolor('yellow')
-t.begin_fill()
-
-for i in range(2):
-    t.fd(100)
-    t.lt(90)
-    t.fd(200)
-    t.lt(90)
-
-t.end_fill()
-
-t.pu()
-t.goto(120,110)
-t.pd()
 
 t.fillcolor('green')
 t.begin_fill()
 
-for i in range(5):
-    t.fd(60)
-    t.right(144)
+for i in range(2):
+    t.fd(300)
+    t.lt(90)
+    t.fd(70)
+    t.lt(90)
 
 t.end_fill()
 
-t.pu()
-t.goto(140,90)
-t.pd()
-t.circle(10)
 mainloop()
