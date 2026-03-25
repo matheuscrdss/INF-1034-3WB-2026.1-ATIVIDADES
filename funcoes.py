@@ -4,9 +4,6 @@ import random as rd
 t = Turtle()
 t.speed(0)
 
-color = textinput('Escolher a cor', 'Digite cor desejada: ')
-
-
 # desenhar o plano cartesiano
 def cartesiano():
     t.fd(500)
@@ -30,7 +27,7 @@ def cartesiano():
 
 
 x = rd.randint(100, 300)
-y = rd.randint(0, 300)
+y = rd.randint(100, 300)
 x1 = rd.randint(-300, 0)
 y1 = rd.randint(-300, 0)
 
@@ -50,24 +47,25 @@ def quadrado(x, y, tamanho, color):
 
 
 # desenhar um octogono
-def octogono(x1, y, tamanho, color):
+def octogono(x1, y, tamanho, color1):
     t.pu()
     t.goto(x1, y)
     t.pd()
     t.begin_fill()
-    t.fillcolor(color)
+    t.fillcolor(color1)
     for i in range(8):
         t.fd(tamanho)
         t.lt(45)
     t.end_fill()
 
+
 # #desenhar um triangulo
-def triangulo(x, y1, tamanho,color):
+def triangulo(x, y1, tamanho,color2):
     t.pu()
     t.goto(x, y1)
     t.pd()
     t.begin_fill()
-    t.fillcolor(color)
+    t.fillcolor(color2)
     for i in range(3):
         t.fd(tamanho)
         t.lt(120)
@@ -75,12 +73,12 @@ def triangulo(x, y1, tamanho,color):
 
 
 # # desenhar um retangulo
-def retangulo(x1, y1, tamanho, color):
+def retangulo(x1, y1, tamanho, color3):
     t.pu()
     t.goto(x1, y1)
     t.pd()
     t.begin_fill()
-    t.fillcolor(color)
+    t.fillcolor(color3)
     for i in range(2):
         t.fd(tamanho)
         t.lt(90)
@@ -91,10 +89,17 @@ def retangulo(x1, y1, tamanho, color):
 
 cartesiano()
 
+color = textinput('Escolher a cor', 'Digite cor desejada: ')
 quadrado(x, y, 100, color)
-octogono(x1, y, 50, color)
-triangulo(x, y1, 100, color)
-retangulo(x1, y1, 100, color)
+
+color1 = textinput('Escolher a cor', 'Digite cor desejada: ')
+octogono(x1, y, 50, color1)
+
+color2 = textinput('Escolher a cor', 'Digite cor desejada: ')
+triangulo(x, y1, 100, color2)
+
+color3 = textinput('Escolher a cor', 'Digite cor desejada: ')
+retangulo(x1, y1, 100, color3)
 
 
 
