@@ -133,6 +133,7 @@ def palestina():
     triangulo(-300, 250, 150, "red")
     sleep(3)
     t.clear()
+    t.right(45)
     
 
 def bahamas():
@@ -142,7 +143,7 @@ def bahamas():
     triangulo(-300, 250, 150, "black")
     sleep(3)
     t.clear()
-
+    t.right(45)
 
 def sudao():
     retangulo(-300, 250, 300, 70, "red")
@@ -151,6 +152,7 @@ def sudao():
     triangulo(-300, 250, 150, "green")
     sleep(3)
     t.clear()
+    t.right(45)
 
 
 def camaroes():
@@ -171,17 +173,24 @@ def india():
     sleep(3)
     t.clear()
 
-italia()
-irlanda()
-japao()
-ucrania()
-polonia()
-emirados_arabes()
-senegal()
-palestina()
-bahamas()
-sudao()
-camaroes()
-india()
+bandeiras = {
+    "italia": italia,
+    "irlanda": irlanda,
+    "japao": japao,
+    "ucrania": ucrania,
+    "polonia": polonia,
+    "emirados": emirados_arabes,
+    "senegal": senegal,
+    "palestina": palestina,
+    "bahamas": bahamas,
+    "sudao": sudao,
+    "camaroes": camaroes,
+    "india": india
+}
+
+escolha = textinput("Bandeiras", "Digite o nome da bandeira:").lower()
+
+if escolha in bandeiras:
+    bandeiras[escolha]()
 
 mainloop()
