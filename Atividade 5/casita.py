@@ -1,10 +1,11 @@
 from pygame import *
-import sys 
-import math
 
 init()
 
 window = display.set_mode((1280, 720))
+
+clock = time.Clock()
+running = True
 
 fonte = font.Font("Atividade 5/animeace2_bld.otf", 30)
 image = image.load("Atividade 5/spiderman.png")
@@ -15,16 +16,28 @@ mixer.music.play(-1)
 
 x_nuvem = 800
 
-while True:
-    time.delay(30)
+while running:
+    clock.tick(60)
 
     for ev in event.get():
         if ev.type == QUIT:
-            quit()
-            sys.exit()
+            running = False
+
+    dt = clock.get_time()/1000
+    keys = key.get_pressed()
+
+
+    direcao = 1  # 1 = direita, -1 = esquerda
+
+    x_nuvem += 5 * direcao
+
+    if x_nuvem >= 950:
+        direcao = -1
+    if x_nuvem <= 100:
+        direcao = 1
+
 
     window.fill((152, 209, 255))
-
     # desenho
     draw.rect(window, (0, 153, 0), (0, 550, 1280, 300))
     draw.rect(window,(96, 96, 96), (400, 350, 200, 200))
@@ -50,10 +63,5 @@ while True:
 
     steve_text = fonte.render("I am Spider Man!", True, "#000000")
     window.blit(steve_text, (30, 300))
-
-    x_nuvem += 4
-
-    if x_nuvem > 1280:
-        x_nuvem = 800
 
     display.update()
