@@ -42,3 +42,4 @@ elif escolha == "/":
     print(divisao(num1, num2))
 
 display.update()
+sys.exit()

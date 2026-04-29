@@ -1,5 +1,5 @@
 import random 
-#parte A
+
 def usuario_adivinha():
     print("===============O Jogo da Adivinhaçâo!===============\n")
     
@@ -11,16 +11,17 @@ def usuario_adivinha():
         tentativas += 1
         
         if chute < numero_secreto:
-            print("1, o número é \033[31mMaior\033[0m!\n") #perguntei a IA como mudar a cor 
+            print("1, o número é Maior")
         elif chute > numero_secreto:
-            print("-1, o número é \033[31mMenor\033[0m!\n")
+            print("-1, o número é Menor")
         else:
             print(f"0, Parabéns, você conseguiu acertar em {tentativas} tentativas\n")
             break
-#parte B
+
+
 def computador_adivinha():
     print("===============O Jogo da Adivinhaçâo!===============\n")
-    print("Pense em número para ocomputador adivinhar!")
+    print("Pense em número para o computador adivinhar!")
     input("Pressione ENTER para começar: ")
     
     alto = 1023
@@ -42,6 +43,7 @@ def computador_adivinha():
         else:
             print("Resposta inválida, use -1, 1 e 0")
            
+
 def jogo():
     print("Escolha quem vai adivinhar: ")
     print("1 - Você tenta adivinhar o número do computador")
