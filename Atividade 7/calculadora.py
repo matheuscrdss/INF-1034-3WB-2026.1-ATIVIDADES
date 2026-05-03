@@ -1,45 +1,30 @@
-from pygame import *
-import sys
+memoria = False
 
-init()
+while True:
+    if memoria == False:
+        n1 = int(input("Digite o primeiro número: "))
+    else:
+        n1 = memoria
+        print(f"Ultimo numero: {memoria}")
 
-window = display.set_mode((500, 720))
-clock = time.Clock()
-running = True
+    operador = input("Digite a operação (+, -, x, /): ")
 
-while running:
-    clock.tick(60)
+    n2 = int(input("Digite o segundo número: "))
 
-    for ev in event.get():
-        if ev.type == QUIT:
-            running = False
+    if operador == "+":
+        resultado = n1 + n2
+    elif operador == "-":
+        resultado = n1 - n2
+    elif operador == "x":
+        resultado = n1 * n2
+    elif operador == "/":
+        resultado = n1 / n2
 
-def soma(a, b):
-    return a + b
+    print(f"Resultado: {resultado}\n")
 
-def subtracao(a, b):
-    return a - b
+    continuar = input("Deseja continuar? (s/n): ").lower()
 
-def multiplicacao(a, b):
-    return a * b
+    if continuar == "n":
+        break
 
-def divisao(a, b):
-    return a / b
-
-
-num1 = int(input("Digite o primeiro numero: "))
-num2 = int(input("Digite o segundo numero: "))
-
-escolha = input("Digite sua escolha [-, +, x, /]:  ")
-
-if escolha == "+":
-    print(soma(num1, num2))    
-elif escolha == "-":
-    print(subtracao(num1, num2))
-elif escolha == "x":
-    print(multiplicacao(num1, num2))
-elif escolha == "/":
-    print(divisao(num1, num2))
-
-display.update()
-sys.exit()
+    memoria = resultado

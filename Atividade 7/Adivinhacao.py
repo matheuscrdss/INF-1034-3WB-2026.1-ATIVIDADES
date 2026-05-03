@@ -1,60 +1,53 @@
-import random 
+import random as rd
 
-def usuario_adivinha():
-    print("===============O Jogo da Adivinhaçâo!===============\n")
-    
-    numero_secreto = random.randint(1, 1023)
+def usuario_joga():
+    print("======= Jogo da adivinhaçao =======")
+
+    num = rd.randint(1, 1023)
+    tentativas = 0
+    while True:
+        chute = int(input("Digite um numero de 1 a 1023: "))
+        tentativas += 1
+
+        if num == chute:
+            print(f"0, Parabens voce acertou em {tentativas} tentativas!")
+            break
+        elif num > chute:
+            print("1, numero maior!")
+        elif num < chute:
+            print("-1, numero menor!")
+
+
+def computador_joga():
+    menor = 1
+    maior = 1023
     tentativas = 0
     
-    while(True):  
-        chute = int(input("Digite um chute entre 1 e 1023: "))
+    print("======= Jogo da adivinhaçao =======")
+    print("Pense em um número entre 1 e 1023.")
+
+    while True:
+        palpite = (menor + maior) // 2
         tentativas += 1
-        
-        if chute < numero_secreto:
-            print("1, o número é Maior")
-        elif chute > numero_secreto:
-            print("-1, o número é Menor")
-        else:
-            print(f"0, Parabéns, você conseguiu acertar em {tentativas} tentativas\n")
+
+        print(f"O computador chutou: {palpite}")
+        resposta = int(input("Digite -1 se seu número é menor, 1 se é maior, ou 0 se acertou: "))
+
+        if resposta == -1:
+            maior = palpite - 1
+        elif resposta == 1:
+            menor = palpite + 1
+        elif resposta == 0:
+            print(f"O computador acertou em {tentativas} tentativas!")
             break
 
+print("""Quem vai tentar adivinhar?
+Usuario [1]
+Computador [2]""")
 
-def computador_adivinha():
-    print("===============O Jogo da Adivinhaçâo!===============\n")
-    print("Pense em número para o computador adivinhar!")
-    input("Pressione ENTER para começar: ")
-    
-    alto = 1023
-    baixo = 1 
-    tentativas = 0
-    
-    while baixo <= alto:
-        palpite = (baixo + alto) // 2 
-        tentativas += 1 
-        print(f"Computador tentou: {palpite}")
-        
-        resposta = input("Digite -1 (Se for menor), 1 (Se for maior), 0 (Acertou!): \n")
-        if resposta == "0":
-            print("Acertou!")
-        if resposta == "-1" :
-            alto = palpite - 1 
-        elif resposta == "1":
-            baixo = palpite + 1 
-        else:
-            print("Resposta inválida, use -1, 1 e 0")
-           
+escolha = int(input("\nDigite sua escolha: "))
 
-def jogo():
-    print("Escolha quem vai adivinhar: ")
-    print("1 - Você tenta adivinhar o número do computador")
-    print("2 - O computador tenta adivinhar o seu número")
-
-    escolha = input("Qual a sua escolha: ") 
-
-    if escolha == "1":
-        usuario_adivinha()
-    elif escolha == "2":
-        computador_adivinha()
-        
-if __name__ == "__main__":
-    jogo()
+if escolha == 1:
+    usuario_joga()
+else:
+    computador_joga()

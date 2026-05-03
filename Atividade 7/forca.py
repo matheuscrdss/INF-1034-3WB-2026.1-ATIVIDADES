@@ -1,24 +1,98 @@
 import random as rd
 
-palavras = ["computador", "janela", "mistério", "oceano", "futebol", "biblioteca", "relâmpago", "caderno", "viagem", "chocolate"]
+palavras = ["python", "computador", "programa", "teclado", "internet"]
 
-def forca():
-    vidas = 6
-    while True:
-        escolha = rd.choice(palavras)
+forca = [
+"""
+  -----
+  |   |
+      |
+      |
+      |
+      |
+=========
+""",
+"""
+  -----
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+""",
+"""
+  -----
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+""",
+"""
+  -----
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========
+""",
+"""
+  -----
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+""",
+"""
+  -----
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+""",
+"""
+  -----
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+"""
+]
 
-        letra = input("Digite uma letra: ")
+palavra = rd.choice(palavras)
+letras_descobertas = ["_"] * len(palavra)
+letras_erradas = []
+erros = 0
 
-        if letra.upper() in escolha:
-            print(f"Letra {letra} correta!")
-        else:
-            print(f"Letra {letra} invalida!")
-            vidas -= 1
-            if vidas == 0:
-                print("Vidas zeradas, voce perdeu!\n")
-                continuar = input("Deseja continuar? (s/n) ").lower()
-                if continuar == "n":
-                    break
-                
+while erros < 6 and "_" in letras_descobertas:
+    print(forca[erros])
+    print("Palavra:", " ".join(letras_descobertas))
+    print("Letras erradas:", letras_erradas)
 
-forca()
+    letra = input("Digite uma letra: ").lower()
+
+    if letra in palavra:
+        for i in range(len(palavra)):
+            if palavra[i] == letra:
+                letras_descobertas[i] = letra
+    else:
+        if letra not in letras_erradas:
+            letras_erradas.append(letra)
+            erros += 1
+
+if "_" not in letras_descobertas:
+    print("Você venceu!")
+    print("Palavra:", palavra)
+else:
+    print(forca[erros])
+    print("Você perdeu!")
+    print("A palavra era:", palavra)
