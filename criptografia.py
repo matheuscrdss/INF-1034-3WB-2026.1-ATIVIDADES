@@ -99,10 +99,8 @@ while running:
                         display.update()
                         time.delay(1000)
 
-                        quit()
-
-                        subprocess.run([sys.executable, "Atividade 6/casita.py"])
                         running = False
+                        subprocess.run([sys.executable, "Atividade 6/casita.py"])
 
                     else:
                         mensagem_senha = "Senha fraca! Use 8 caracteres, maiúscula, minúscula e número."
